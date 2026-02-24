@@ -85,7 +85,7 @@ function Sum(e) {
     return sum;
 }
 
-const ar = [2, 4, -4, -2, 5]
+// const ar = [2, 4, -4, -2, 5]
 // console.log(Sum(ar));
 
 
@@ -113,8 +113,26 @@ const str = "Prathamesh";
 //     You are working on a note-taking app, and you want to implement a function named saveNoteToLocalStorage that takes a note object and saves it to the browser's local storage.
 
 function saveNoteToLocalStorage(e) {
-    localStorage.setItem("Npte",JSON.stringify(e))
+    localStorage.setItem("Npte", JSON.stringify(e))
 }
 
 const lsm = "Day";
 // saveNoteToLocalStorage(lsm);
+
+// 8. Async Array Mapping:
+//    Write an asynchronous function that takes an array of numbers and returns a new array of Promises where each number is multiplied by 2 after a delay of 500 milliseconds.
+
+async function Mapping(e) {
+    const promises = e.map(arr=>{
+        return new Promise(resolve => 
+            setTimeout(()=>{
+                resolve(arr*2)
+            },500)
+        )
+    })
+
+    return Promise.all(promises);
+}
+
+const ar = [2, 4, -4, -2, 5]
+// Mapping(ar).then(result => console.log(result));
