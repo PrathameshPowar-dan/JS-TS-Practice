@@ -29,16 +29,16 @@ const students = ["Dan", "SAMMYity", "Ravenloty", "HarryPo"]
 function Doubles(e) {
     const result = []
     for (let i = 0; i < e.length; i++) {
-        if (e[i]>0 && e[i] === e[i-1]) {
+        if (e[i] > 0 && e[i] === e[i - 1]) {
             result.push(e[i]);
-        } else{
-            result.push(e[i]*2);
+        } else {
+            result.push(e[i] * 2);
         }
     }
     return result;
 }
 
-const arr = [1,2,3,4,4,5];
+const arr = [1, 2, 3, 4, 4, 5];
 // console.log(Doubles(arr));
 
 // 3. The Mirror Mirror:
@@ -46,7 +46,7 @@ const arr = [1,2,3,4,4,5];
 
 function MirrorMirror(e) {
     const reverse = e.split("").reverse().join("");
-    return e+reverse;
+    return e + reverse;
 }
 
 // console.log(MirrorMirror("Prat"));
@@ -55,7 +55,7 @@ function MirrorMirror(e) {
 //    You are building a password validation feature. Create a function that checks if a given password meets the following criteria: at least 8 characters long, contains both uppercase and lowercase letters, and includes at least one digit.
 
 function ValidatePassword(password) {
-    const length = password.length>=8;
+    const length = password.length >= 8;
     const UpperCase = /[A-Z]/.test(password);
     const LowerCase = /[a-z]/.test(password);
     const Number = /[0-9]/.test(password);
@@ -72,10 +72,10 @@ function ValidatePassword(password) {
 // 5. The Sum Selector:
 //    You are working on a function that should sum all numbers in an array until it encounters a negative number. Write a function that performs this summation.
 
-function Sum(e){
+function Sum(e) {
     let sum = 0
     for (let i = 0; i < e.length; i++) {
-        if (e[i]<0) {
+        if (e[i] < 0) {
             break;
         } else {
             sum += e[i];
@@ -85,5 +85,26 @@ function Sum(e){
     return sum;
 }
 
-const ar = [2,4,-4,-2,5]
+const ar = [2, 4, -4, -2, 5]
 // console.log(Sum(ar));
+
+
+// 6. The Vowel Counter:
+//    You need to create a function that counts the number of vowels in a given string. Consider both uppercase and lowercase vowels.
+
+function Vowels(e) {
+    // normalize input to lowercase so both cases are counted
+    const vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
+    let count = 0;
+
+    for (let i = 0; i < e.length; i++) {
+        if (vowels.includes(e[i])) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+const str = "Prathamesh";
+// console.log(Vowels(str));
