@@ -68,3 +68,22 @@ function ValidatePassword(password) {
 };
 
 // console.log(ValidatePassword("1234Abcdd"));
+
+// 5. The Sum Selector:
+//    You are working on a function that should sum all numbers in an array until it encounters a negative number. Write a function that performs this summation.
+
+function Sum(e){
+    let sum = 0
+    for (let i = 0; i < e.length; i++) {
+        if (e[i]<0) {
+            break;
+        } else {
+            sum += e[i];
+        }
+    }
+
+    return sum;
+}
+
+const ar = [2,4,-4,-2,5]
+// console.log(Sum(ar));
