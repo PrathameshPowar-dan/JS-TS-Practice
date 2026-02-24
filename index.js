@@ -123,11 +123,11 @@ const lsm = "Day";
 //    Write an asynchronous function that takes an array of numbers and returns a new array of Promises where each number is multiplied by 2 after a delay of 500 milliseconds.
 
 async function Mapping(e) {
-    const promises = e.map(arr=>{
-        return new Promise(resolve => 
-            setTimeout(()=>{
-                resolve(arr*2)
-            },500)
+    const promises = e.map(arr => {
+        return new Promise(resolve =>
+            setTimeout(() => {
+                resolve(arr * 2)
+            }, 500)
         )
     })
 
@@ -142,20 +142,35 @@ const ar = [2, 4, -4, -2, 5]
 
 async function placeOrder() {
     const random = Math.random();
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const success = Math.random()>0.5;
+            const success = Math.random() > 0.5;
             if (success) {
                 resolve("Order Placed")
             } else {
                 reject("Order Not Placed")
             }
-        }, random*10000);
+        }, random * 10000);
     })
 }
 
-placeOrder().then((message)=>{
-    console.log("Successfully",message)
-}).catch(e=>{
-    console.log("Unsuccess",e)
-})
+// placeOrder().then((message)=>{
+//     console.log("Successfully",message)
+// }).catch(e=>{
+//     console.log("Unsuccess",e)
+// })
+
+// 10. The Coffee Machine:
+//     In your coffee shop application, you need to simulate the process of brewing coffee asynchronously.Write an async function named brewCoffee that takes the type of coffee and returns a promise.The promise should resolve with a message indicating that the coffee is ready after a random delay.
+
+async function brewCoffee(e) {
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve(`${e} is ready`)
+        },Math.random()*10000)
+    })
+}
+
+brewCoffee("espresso").then(mess=>{
+    console.log(mess)
+});
