@@ -136,3 +136,26 @@ async function Mapping(e) {
 
 const ar = [2, 4, -4, -2, 5]
 // Mapping(ar).then(result => console.log(result));
+
+// 9. The Asynchronous Shopper:
+//    Imagine you are building an online shopping application. Write an asynchronous function called placeOrder that simulates placing an order and returns a promise. The promise should resolve with an order confirmation message after a random delay.
+
+async function placeOrder() {
+    const random = Math.random();
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            const success = Math.random()>0.5;
+            if (success) {
+                resolve("Order Placed")
+            } else {
+                reject("Order Not Placed")
+            }
+        }, random*10000);
+    })
+}
+
+placeOrder().then((message)=>{
+    console.log("Successfully",message)
+}).catch(e=>{
+    console.log("Unsuccess",e)
+})
