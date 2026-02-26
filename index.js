@@ -171,6 +171,17 @@ async function brewCoffee(e) {
     })
 }
 
-brewCoffee("espresso").then(mess=>{
-    console.log(mess)
-});
+// brewCoffee("espresso").then(mess=>{
+//     console.log(mess)
+// });
+
+// 11. The Array Filterer:
+//     You are building a search feature for your e-commerce site. Write a function named filterProducts that takes an array of product objects and a filter criterion. The function should return a new array containing only the products that match the filter criterion.
+
+function filterProducts(e,query) {
+    return e.filter(product => product.productName.toLowerCase() === query.toLowerCase())
+}
+
+const ProductArr = [{name:"table",productName:"Ultra"},{name:"drop",productName:"med"},{name:"tree",productName:"ultra"}];
+
+// console.log(filterProducts(ProductArr,"Ultra"));
