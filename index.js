@@ -220,3 +220,12 @@ const pro = [{name:"Banana",price:100,quantity:2},{name:"Apple",price:10,quantit
 
 // console.log("Total Price",calculateTotal(pro));
 
+// 14. The Window Scroller:
+//     You are developing a single-page application with a smooth scrolling effect. Implement a function named smoothScrollToTop that smoothly scrolls the window to the top when called.
+
+function smoothScrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
