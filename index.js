@@ -164,10 +164,10 @@ async function placeOrder() {
 //     In your coffee shop application, you need to simulate the process of brewing coffee asynchronously.Write an async function named brewCoffee that takes the type of coffee and returns a promise.The promise should resolve with a message indicating that the coffee is ready after a random delay.
 
 async function brewCoffee(e) {
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
+    return new Promise((resolve) => {
+        setTimeout(() => {
             resolve(`${e} is ready`)
-        },Math.random()*10000)
+        }, Math.random() * 10000)
     })
 }
 
@@ -178,10 +178,27 @@ async function brewCoffee(e) {
 // 11. The Array Filterer:
 //     You are building a search feature for your e-commerce site. Write a function named filterProducts that takes an array of product objects and a filter criterion. The function should return a new array containing only the products that match the filter criterion.
 
-function filterProducts(e,query) {
+function filterProducts(e, query) {
     return e.filter(product => product.productName.toLowerCase() === query.toLowerCase())
 }
 
-const ProductArr = [{name:"table",productName:"Ultra"},{name:"drop",productName:"med"},{name:"tree",productName:"ultra"}];
+const ProductArr = [{ name: "table", productName: "Ultra" }, { name: "drop", productName: "med" }, { name: "tree", productName: "ultra" }];
 
 // console.log(filterProducts(ProductArr,"Ultra"));
+
+// 12. The Token Manager:
+//     You are developing a user authentication system, and you need to manage user authentication tokens. Implement a function named setAuthToken that takes an authentication token and sets it in localStorage with an expiration time.
+
+function setAuthToken(token){
+    const expiryTime = Date.now() + 10000;
+
+    const data = {
+        token,
+        expiry: expiryTime
+    }
+    localStorage.setItem("AuthToken",JSON.stringify(data));
+
+    return data
+}
+
+// console.log(setAuthToken("token"));
