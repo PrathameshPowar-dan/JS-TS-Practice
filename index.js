@@ -243,4 +243,4 @@ function GetEven(e) {
 const randomArr = [5, 2, 4, 4, 7, 8, 7];
 const output = GetEven(randomArr);
 
-console.log(output);
+// console.log(output);
