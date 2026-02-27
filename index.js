@@ -207,16 +207,16 @@ function setAuthToken(token) {
 // 13. The Shopping Cart Totalizer:
 //     You are working on an e-commerce website, and you need to calculate the total cost of items in the shopping cart. Implement a function named calculateTotal that takes an array of products with prices and quantities and returns the total cost.
 
-function calculateTotal(arr){
+function calculateTotal(arr) {
     let total = 0;
-    for (let i = 0; i < arr.length; i++) { 
-            total += arr[i].price * arr[i].quantity
+    for (let i = 0; i < arr.length; i++) {
+        total += arr[i].price * arr[i].quantity
     }
 
     return total;
 }
 
-const pro = [{name:"Banana",price:100,quantity:2},{name:"Apple",price:10,quantity:2},{name:"Orange",price:40,quantity:2}]
+const pro = [{ name: "Banana", price: 100, quantity: 2 }, { name: "Apple", price: 10, quantity: 2 }, { name: "Orange", price: 40, quantity: 2 }]
 
 // console.log("Total Price",calculateTotal(pro));
 
@@ -228,4 +228,19 @@ function smoothScrollToTop() {
         top: 0,
         behavior: "smooth"
     });
+};
+
+
+// 15. Make a function that takes a array. it returns a new array which has even numbers and are unique
+// exmaple input: [5,2,4,4,7,8,7] and the output: [2,4,8]
+
+function GetEven(e) {
+    return [...new Set(e.filter(el => el % 2 === 0))]
 }
+
+// Using Set because it will remove the duplicates it self
+
+const randomArr = [5, 2, 4, 4, 7, 8, 7];
+const output = GetEven(randomArr);
+
+console.log(output);
