@@ -262,6 +262,24 @@ function FizzBuzz() {
     }
 }
 
-const FizzBuzzy = FizzBuzz();
+// const FizzBuzzy = FizzBuzz();
 
-console.log(FizzBuzzy)
+// console.log(FizzBuzzy);
+
+// 16. In JS all object is a truthy value
+
+// Falsey Value
+// false
+// 0
+// -0
+// 0n
+// ""
+// null
+// undefined
+// NaN
+
+if ({}) {
+    console.log("Present")
+} else {
+    console.log("Absent")
+}
