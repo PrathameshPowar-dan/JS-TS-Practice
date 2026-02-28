@@ -73,7 +73,7 @@ function countVowels(value: string): number {
     let count = 0;
 
     for (const char of value.toLowerCase()) {
-        if (vowels.includes(char)) {
+        if (vowels.indexOf(char) !== -1) {
             count++;
         }
     }
@@ -87,43 +87,43 @@ function SaveNoteToLocalStorage<T>(note: T): void {
 }
 
 // 8. Async Array Mapping
-async function mapping(arr: number[]): Promise<number[]> {
-    const promises: Promise<number>[] = arr.map((num) => {
-        return new Promise<number>((resolve) => {
-            setTimeout(() => {
-                resolve(num * 2);
-            }, 500);
-        });
-    });
+// async function mapping(arr: number[]): Promise<number[]> {
+//     const promises: Promise<number>[] = arr.map((num) => {
+//         return new Promise<number>((resolve) => {
+//             setTimeout(() => {
+//                 resolve(num * 2);
+//             }, 500);
+//         });
+//     });
 
-    return Promise.all(promises);
-}
+//     return Promise.all(promises);
+// }
 
 // 9. The Asynchronous Shopper
-async function PlaceOrder(): Promise<string> {
-    const delay = Math.random() * 10000;
+// async function PlaceOrder(): Promise<string> {
+//     const delay = Math.random() * 10000;
 
-    return new Promise<string>((resolve, reject) => {
-        setTimeout(() => {
-            const success = Math.random() > 0.5;
+//     return new Promise<string>((resolve, reject) => {
+//         setTimeout(() => {
+//             const success = Math.random() > 0.5;
 
-            if (success) {
-                resolve("Order Placed");
-            } else {
-                reject("Order Not Placed");
-            }
-        }, delay);
-    });
-}
+//             if (success) {
+//                 resolve("Order Placed");
+//             } else {
+//                 reject("Order Not Placed");
+//             }
+//         }, delay);
+//     });
+// }
 
 // 10. The Coffee Machine
-async function BrewCoffee(type: string): Promise<string> {
-    return new Promise<string>((resolve) => {
-        setTimeout(() => {
-            resolve(`${type} is ready`);
-        }, Math.random() * 10000);
-    });
-}
+// async function BrewCoffee(type: string): Promise<string> {
+//     return new Promise<string>((resolve) => {
+//         setTimeout(() => {
+//             resolve(`${type} is ready`);
+//         }, Math.random() * 10000);
+//     });
+// }
 
 // 11. The Array Filterer
 interface Product {
@@ -183,6 +183,24 @@ function SmoothScrollToTop(): void {
 }
 
 // 15. Even and Unique Numbers
-function getEvenUnique(arr: number[]): number[] {
-    return [...new Set(arr.filter((num) => num % 2 === 0))];
+// function getEvenUnique(arr: number[]): number[] {
+//     return [...new Set(arr.filter((num) => num % 2 === 0))];
+// }
+
+// 15. Write a Program that prints the numbers from 1 to 100. but for multiples of 3 print "Fizz" instead  of the number and for the multiples of 5 print "Buzz". For Numbers which are multiples of both 3 and 5 print "FizzBuzz"
+
+function fizzBuzz(): void {
+    for (let i = 1; i <= 100; i++) {
+        if (i % 15 === 0) {
+            console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            console.log(i);
+        }
+    }
 }
+
+// fizzBuzz();
