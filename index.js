@@ -244,3 +244,24 @@ const randomArr = [5, 2, 4, 4, 7, 8, 7];
 const output = GetEven(randomArr);
 
 // console.log(output);
+
+
+// 15. Write a Program that prints the numbers from 1 to 100. but for multiples of 3 print "Fizz" instead  of the number and for the multiples of 5 print "Buzz". For Numbers which are multiples of both 3 and 5 print "FizzBuzz"
+
+function FizzBuzz() {
+    for (let i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz")
+        } else if (i % 3 === 0) {
+            console.log("Fizz")
+        } else if (i % 5 === 0) {
+            console.log("Buzz")
+        } else {
+            console.log(i)
+        }
+    }
+}
+
+const FizzBuzzy = FizzBuzz();
+
+console.log(FizzBuzzy)
