@@ -278,9 +278,8 @@ function FizzBuzz() {
 // undefined
 // NaN
 
-if ({}) {
-    console.log("Present")
-} else {
-    console.log("Absent")
-}
-
+// if ({}) {
+//     console.log("Present")
+// } else {
+//     console.log("Absent")
+// }
